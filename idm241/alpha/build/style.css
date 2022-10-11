@@ -1,0 +1,112 @@
+:root {
+	--bg: #C54D29;
+  --text:  #FFF;
+}
+
+body {
+  padding: 2rem;
+  justify-content: center;
+  display: flex;
+  color:#FFF;
+  background-color: #1C1D22;
+  font-family: 'SF Pro', Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font-size: 32px;
+}
+
+h2{
+  font-size: 24px;
+  text-decoration: underline dotted;
+  color: #ECB24D;
+}
+li{
+  font-size: 20px;
+}
+p{
+  font-size: 20px;
+}
+
+img {
+  width: 45px;
+}
+
+input {
+  display: none;
+}
+
+/* button */
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+
+@keyframes like {
+  75% {
+    transform: scale(1.25);
+  }
+}
+@keyframes dislike {
+  75% {
+    transform: scale(0.75);
+  }
+}
+
+label img {
+  content: url('img/outline.svg');
+  color: #FFFFFF33;
+  padding-top: 5px;
+  font-size: 4rem;
+  animation: dislike 0.5s ease 0s;
+}
+input:checked + label img {
+  content: url('img/filled.svg');
+  color: var(--text);
+  animation: like 0.5s ease 0s ;
+}
+
+.button:hover label {
+  background: #A73512;
+
+      transform: scale(1.03);
+  }
+
+
+
+@keyframes counter-top {
+  70% {
+    top: -47px;
+  }
+}
+
+@keyframes counter-bot {
+  70% {
+    top: inherit;
+    bottom: -50px;
+  }
+}
+
+
+
+input:checked + label::after {
+  --bg: var(--text);
+  --pos: 5%;
+  animation: disc-text 1.5s ease 0s,
+  spin-text 0.65s ease-in-out 0.25s;
+}
+
