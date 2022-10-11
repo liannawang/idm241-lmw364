@@ -15,6 +15,13 @@ body {
 h1{
   font-size: 32px;
 }
+a{
+  color:#FFF;
+  text-decoration: underline dotted;
+}
+a:hover{
+  color: #ECB24D;
+}
 
 h2{
   font-size: 24px;
