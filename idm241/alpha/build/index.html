@@ -11,14 +11,18 @@
 
 <body>
   <wrapper>
-    <h1><a href="https://www.allrecipes.com/">Allrecipes</a> Microinteraction Build</h1>
+    <h1><a href="https://www.allrecipes.com/" target="blank">Allrecipes</a> Microinteraction Build</h1>
+  <div class="buttoncontainer">
     <div class="button">
       <input type="checkbox" id="liked">
       <label for="liked">
         <img src="img/outline.svg" />
       </label>
     </div>
-    <div class="column">
+  </div>
+   
+    <div class="row">
+      <div class="column">
       <h2>Triggers</h2>
       <li>Hover on/off favorite icon on recipe card</li>
       <li>Click favorite icon on recipe card</li>
@@ -26,24 +30,40 @@
 
     <div class="column">
       <h2>Rules</h2>
-      <p>On hover:</p>
+      <p>Hover on:</p>
       <li>Cursor change into pointer</li>
       <li>Circle becomes 10% bigger </li>
       <li>Red darkens in color by 10%</li>
-      <p>On click:</p>
-      <li>Heart shape becomes filled or unfilled</li>
-      <li>Heart shape scales up 1.25% and then scales down 1.25%</li>
-      <li>Favorite icon pressed = true is saved in backend</li>
-    </div>
-    <div class="column">
-      <h2>Feedback</h2>
-      <p>On hover:</p>
-      <li>Cursor change into pointer</li>
-      <li>Circle becomes 10% bigger </li>
-      <li>Red darkens in color by 10%</li>
-      <p>On click:</p>
+      <p>Hover off:</p>
+      <li>Pointer change into cursor</li>
+      <li>Circle becomes 10% smaller </li>
+      <li>Red lightens in color by 10%</li>
+      <p>On click (Like):</p>
       <li>Heart shape becomes filled</li>
       <li>Heart shape scales up 1.25% and then scales down 1.25%</li>
+      <li>Favorite icon pressed = true is saved in backend</li>
+      <p>On click (Dislike):</p>
+      <li>Heart shape becomes unfilled</li>
+      <li>Heart shape scales down 1.25% and then scales up 1.25%</li>
+      <li>Favorite icon pressed = false is saved in backend</li>
+    </div>
+
+    <div class="column">
+      <h2>Feedback</h2>
+      <p>Hover on:</p>
+      <li>Cursor change into pointer</li>
+      <li>Circle becomes 10% bigger </li>
+      <li>Red darkens in color by 10%</li>
+      <p>Hover off:</p>
+      <li>Pointer change into cursor</li>
+      <li>Circle becomes 10% smaller </li>
+      <li>Red lightens in color by 10%</li>
+      <p>On click (Like):</p>
+      <li>Heart shape becomes filled</li>
+      <li>Heart shape scales up 1.25% and then scales down 1.25%</li>
+      <p>On click (Dislike):</p>
+      <li>Heart shape becomes unfilled</li>
+      <li>Heart shape scales down 1.25% and then scales up 1.25%</li>
     </div>
 
     <div class="column">
@@ -51,6 +71,8 @@
       <li>None</li>
     </div>
     </div>
+    </div>
+    
   </wrapper>
 </body>
 

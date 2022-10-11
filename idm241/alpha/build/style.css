@@ -4,7 +4,7 @@
 }
 
 body {
-  padding: 2rem;
+  padding: 2rem 4rem ;
   justify-content: center;
   display: flex;
   color:#FFF;
@@ -14,6 +14,7 @@ body {
 
 h1{
   font-size: 32px;
+  text-align: center;
 }
 a{
   color:#FFF;
@@ -56,10 +57,10 @@ label {
   cursor: pointer;
 }
 
-.button{
+.buttoncontainer{
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 
@@ -89,11 +90,8 @@ input:checked + label img {
 
 .button:hover label {
   background: #A73512;
-
       transform: scale(1.03);
   }
-
-
 
 @keyframes counter-top {
   70% {
@@ -117,3 +115,26 @@ input:checked + label::after {
   spin-text 0.65s ease-in-out 0.25s;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+      
+.column {
+  flex: 20%;
+  padding: 2rem;
+  text-align: left ;
+}
+
+  
+      
+@media screen and (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    flex: 20%;
+    padding: 1rem;
+    text-align: left ;
+    }
+    }
