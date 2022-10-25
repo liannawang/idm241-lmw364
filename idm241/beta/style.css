@@ -7,17 +7,18 @@ body {
   padding: 2rem 4rem ;
   justify-content: center;
   display: flex;
-  color:#FFF;
-  background-color: #1C1D22;
+  color:#3F2017;
+  background-color: #F1F1F1;
   font-family: 'SF Pro', Arial, Helvetica, sans-serif;
 }
 
 h1{
   font-size: 32px;
   text-align: center;
+  color:#EC673F;
 }
 a{
-  color:#FFF;
+  color:#EC673F;
   text-decoration: underline dotted;
 }
 a:hover{
@@ -27,7 +28,7 @@ a:hover{
 h2{
   font-size: 24px;
   text-decoration: underline dotted;
-  color: #ECB24D;
+  color: #EC673F;
 }
 li{
   font-size: 20px;
@@ -39,7 +40,8 @@ p{
 }
 
 img {
-  width: 45px;
+  width: 80vw;
+  padding: 1rem;
 }
 
 input {
@@ -148,3 +150,8 @@ input:checked + label::after {
       text-align: left ;
       }
     }
+
+.images {
+  align-items: center;
+  text-align: center;
+}
