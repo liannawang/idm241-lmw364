@@ -122,6 +122,7 @@ input:checked + label::after {
 .row {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom:2rem ;
   }
       
 .column {

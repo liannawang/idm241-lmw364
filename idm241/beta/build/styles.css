@@ -1,0 +1,337 @@
+#test {
+    visibility: hidden;
+  color: #000;
+}
+
+#test.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+/*     animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s; */
+}
+#toast {
+    visibility: hidden;
+    max-width: 50px;
+  height:50px;
+
+    /*margin-left: -125px;*/
+    margin: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+
+    position: fixed;
+    z-index: 1;
+    left: 0;right:0;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+}
+#toast #img{
+	width: 50px;
+	height: 50px;
+  border-radius: 10px;
+    
+    float: left;
+    
+    padding-top: 16px;
+    padding-bottom: 16px;
+    
+    box-sizing: border-box;
+
+    
+    background-color: #111;
+    color: #fff;
+}
+#toast #desc{
+
+    
+    color: #fff;
+   
+    padding: 16px;
+    
+    overflow: hidden;
+	white-space: nowrap;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+    from {min-width: 50px} 
+    to {min-width: 350px}
+}
+
+@keyframes expand {
+    from {min-width: 50px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes stay {
+    from {min-width: 350px} 
+    to {min-width: 350px}
+}
+
+@keyframes stay {
+    from {min-width: 350px}
+    to {min-width: 350px}
+}
+@-webkit-keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@keyframes shrink {
+    from {min-width: 350px;} 
+    to {min-width: 50px;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 60px; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 60px; opacity: 0;}
+}
+
+
+
+
+
+:root {
+	--bg: #C54D29;
+  --text:  #000;
+}
+
+body {
+  padding: 2rem 4rem ;
+  justify-content: center;
+  display: flex;
+  color:#000;
+  background-color: #FFF;
+  font-family: 'SF Pro', Arial, Helvetica, sans-serif;
+}
+
+h1{
+  font-size: 32px;
+  text-align: center;
+  color: #EC673F;
+}
+a{
+  color:#EC673F;
+  text-decoration: underline dotted;
+}
+a:hover{
+  color: #ECB24D;
+}
+
+h2{
+  font-size: 24px;
+  text-decoration: underline dotted;
+  color: #EC673F;;
+}
+li{
+  font-size: 20px;
+  list-style-position: outside;
+
+}
+p{
+  font-size: 20px;
+}
+
+img {
+  width: 45px;
+}
+
+input {
+  display: none;
+}
+
+/* button */
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.buttoncontainer{
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+
+@keyframes like {
+  75% {
+    transform: scale(1.25);
+  }
+}
+@keyframes dislike {
+  75% {
+    transform: scale(0.75);
+  }
+}
+
+label img {
+  content: url('img/outline.svg');
+  color: #FFFFFF33;
+  padding-top: 5px;
+  font-size: 4rem;
+  animation: dislike 0.5s ease 0s;
+}
+input:checked + label img {
+  content: url('img/filled.svg');
+  color: var(--text);
+  animation: like 0.5s ease 0s ;
+}
+
+.button:hover label {
+  background: #A73512;
+      transform: scale(1.03);
+  }
+
+@keyframes counter-top {
+  70% {
+    top: -47px;
+  }
+}
+
+@keyframes counter-bot {
+  70% {
+    top: inherit;
+    bottom: -50px;
+  }
+}
+
+
+
+input:checked + label::after {
+  --bg: var(--text);
+  --pos: 5%;
+  animation: disc-text 1.5s ease 0s,
+  spin-text 0.65s ease-in-out 0.25s;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+      
+.column {
+  flex: 20%;
+  padding: 2rem;
+  text-align: left ;
+}
+
+  
+      
+@media screen and (max-width: 1423px) {
+  .column {
+    flex: 40%;
+    padding: 1rem;
+    text-align: left ;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .row {
+      flex-direction: column;
+    }
+    .column {
+      flex: 20%;
+      padding: 1rem;
+      text-align: left ;
+      }
+    }
+
+button {
+  background-color: transparent;
+  border:none;
+  color: #FFFF
+}
+
+#desc button {
+  border: 1px solid white;
+  color: white;
+  margin-left: 80px;
+  padding: 2px 8px;
+  font-size: 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  
+}
+
+#toast #desc {
+  text-align: left;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+  
+  #text .modal {
+    /* position: absolute; */
+    width: 450px;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%); */
+  }
+
+  #text .icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    /* top: 12%;
+    left: 62%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%); */
+    /* position: absolute; */
+  top: 30px;
+  left: 400px;
+  }

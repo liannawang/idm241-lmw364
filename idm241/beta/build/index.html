@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <wrapper>
+        <h1><a href="https://www.allrecipes.com/" target="blank">Allrecipes</a> Microinteraction Build</h1>
+        <div class="buttoncontainer">
+            <button class="main" onclick="launch_toast()">
+
+                <div class="button">
+                    <input type="checkbox" id="liked">
+                    <label for="liked">
+                        <img src="img/outline.svg" />
+                    </label>
+                </div>
+
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="column">
+              <h2>Triggers</h2>
+              <ul>
+                <li>Click favorite icon on recipe card</li>
+                <li>Click on 'Add to collection' button <ul><li>Located on the right side of the toast notification that appears when the user clicks the favorite icon</li></ul></li>
+                <li>Click X icon to close 'Add to collection' menu</li>
+              </ul>
+            </div>
+      
+            <div class="column">
+              <h2>Rules</h2>
+              <p>Click on heart icon (Save):</p>
+              <ul>
+                <li>Toast notification that says "Saved to Favorites" slides up from bottom of screen, stays on screen for 5 seconds, and then slides down out of the screen</li>
+              </ul>
+              <p>Click on heart icon(Unsave):</p>
+              <ul>
+                <li>Toast notification that says "Removed from Favorites'" slides up from bottom of screen, stays for 5 seconds, and then slides down out of the screen</li>
+              </ul>
+              <p>Click on 'Add to collection' button</p>
+              <ul>
+                <li>Menu of possible collections slides up from bottom of screen </li>
+              </ul>
+              <p>Click on X icon next to menu</p>
+              <ul>
+                <li>Menu of possible collections slides down from bottom of screen </li>
+              </ul>
+            </div>
+      
+            <div class="column">
+              <h2>Feedback</h2>
+              <p>Click on heart icon (Save):</p>
+              <ul>
+                <li>Toast notification that says "Saved to Favorites" slides up from bottom of screen, stays on screen for 5 seconds, and then slides down out of the screen</li>
+              </ul>
+              <p>Click on heart icon(Unsave):</p>
+              <ul>
+                <li>Toast notification that says "Removed from Favorites'" slides up from bottom of screen, stays for 5 seconds, and then slides down out of the screen</li>
+              </ul>
+              <p>Click on 'Add to collection' button</p>
+              <ul>
+                <li>Menu of possible collections slides up from bottom of screen </li>
+              </ul>
+              <p>Click on X icon next to menu</p>
+              <ul>
+                <li>Menu of possible collections slides down from bottom of screen </li>
+              </ul>
+            </div>
+      
+            <div class="column">
+              <h2>Loops and Modes</h2>
+              <ul>
+                <li>Menu appears on click and disappears when the X icon is pressed</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+
+    </wrapper>
+
+
+
+
+    <div id="toast">
+        <div id="img">✓</div>
+        <div id="desc"> Saved
+
+            <button onclick="show_modal()">
+                Add to collection
+            </button>
+        </div>
+
+
+    </div>
+
+    <div id="overlay">
+        <div id="text">
+            <img class="modal" src="img/modal.png">
+            <img class="icon" src="img/x.png" onclick="close_modal()">
+        </div>
+    </div>
+
+    <div id="test">
+        <img
+            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Fstay-in-the-moment-take-a-picture%2F&psig=AOvVaw2PaaEMzW0whCEy1m04e-lY&ust=1667345382638000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLjMrNvPi_sCFQAAAAAdAAAAABAE">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
