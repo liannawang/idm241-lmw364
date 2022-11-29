@@ -52,12 +52,23 @@
 
 
 function launch_toast() {
+    document.getElementById("toast").style.display = "block";
     var x = document.getElementById("toast")
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+    console.log("working");
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 40000);
+}
+
+function close_toast() {
+    document.getElementById("toast").style.display = "none";
+}
+
+function close_removetoast() {
+    document.getElementById("removetoast").style.display = "none";
 }
 
 function remove_toast() {
+    document.getElementById("removetoast").style.display = "block";
     var z = document.getElementById("removetoast")
     z.className = "show";
     setTimeout(function(){ z.className = z.className.replace("show", ""); }, 5000);
