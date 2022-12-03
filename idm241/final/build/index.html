@@ -8,10 +8,24 @@
     <title>IDM241- Final Build</title>
     <link rel="stylesheet" href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+
+
 <body>
+
+  
     <wrapper>
+      <div class="topnav" id="myTopnav">
+        <a class="logo" href="https://www.allrecipes.com" target="blank"><img src="img/logo.png"></a>
+        <a href="https://www.liannawang.com/idm241/final/build" target="blank" class="active">Final</a>
+        <a href="https://www.liannawang.com/idm241/beta/build" target="blank">Beta</a>
+        <a href="https://www.liannawang.com/idm241/alpha/build" target="blank">Alpha</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
         <h1>IDM241: <a href="https://www.allrecipes.com/" target="blank">Allrecipes</a> Final Build</h1>
         <div class="buttoncontainer">
             <!-- <button class="main" onclick="buttonPress()"> -->
@@ -57,18 +71,18 @@
               <ul>
                 <li>Heart shape becomes filled + scales up 1.25% and then scales down 1.25%</li>
                 <li>Favorite icon pressed = true is saved in backend</li>
-                <li>Toast notification that says "Saved to liked" slides up and expands from bottom of screen</li>
+                <li>Toast notification that says "Saved to liked" slides up and expands from bottom of screen, stays for 1 minute, and then shrinks and slides down out of the screen</li>
               </ul>
               <p>Click on toast notification's X icon:</p>
               <ul>
-                <li>Toast notification is dismissed and disappears</li>
+                <li>Toast notification is dismissed and icon fades out</li>
               </ul>
               <p>Click on heart icon(Unsave):</p>
               <ul>
                 <li>Heart shape becomes unfilled</li>
                 <li>Heart shape scales down 1.25% and then scales up 1.25%</li>
                 <li>Favorite icon pressed = false is saved in backend</li>
-                <li>Toast notification that says "Removed from liked'" slides up and expands from bottom of screen, stays for 10 seconds, and then slides down out of the screen</li>
+                <li>Toast notification that says "Removed from liked'" slides up and expands from bottom of screen, stays for 5 seconds, and then shrinks and slides down out of the screen</li>
               </ul>
               <hr>
               <p>Hover on 'Add to collection' button</p>
@@ -95,12 +109,12 @@
               <hr>
               <p>Click on 'Add to collection' button</p>
               <ul>
-                <li>Menu of possible collections appears </li>
+                <li>Menu of possible collections fades in </li>
               </ul>
               
               <p>Click on X icon next to menu</p>
               <ul>
-                <li>Menu of possible collections disappears </li>
+                <li>Menu of possible collections fades out </li>
               </ul>
             </div>
       
@@ -125,18 +139,18 @@
               <ul>
                 <li>Heart shape becomes filled + scales up 1.25% and then scales down 1.25%</li>
 
-                <li>Toast notification that says "Saved to liked" slides up and expands from bottom of screen</li>
+                <li>Toast notification that says "Saved to liked" slides up and expands from bottom of screen, stays for 1 minute, and then shrinks and slides down out of the screen</li>
               </ul>
               <p>Click on toast notification's X icon:</p>
               <ul>
-                <li>Toast notification is dismissed and disappears</li>
+                <li>Toast notification is dismissed and icon fades out</li>
               </ul>
               <p>Click on heart icon(Unsave):</p>
               <ul>
                 <li>Heart shape becomes unfilled</li>
                 <li>Heart shape scales down 1.25% and then scales up 1.25%</li>
             
-                <li>Toast notification that says "Removed from liked'" slides up and expands from bottom of screen, stays for 10 seconds, and then slides down out of the screen</li>
+                <li>Toast notification that says "Removed from liked'" slides up and expands from bottom of screen, stays for 5 seconds, and then shrinks and slides down out of the screen</li>
               </ul>
               <hr>
               <p>Hover on 'Add to collection' button</p>
@@ -161,20 +175,20 @@
               <hr>
               <p>Click on 'Add to collection' button</p>
               <ul>
-                <li>Menu of possible collections appears </li>
+                <li>Menu of possible collections fades in </li>
               </ul>
               
               <p>Click on X icon next to menu</p>
               <ul>
-                <li>Menu of possible collections disappears </li>
+                <li>Menu of possible collections fades out </li>
               </ul>
             </div>
       
             <div class="column">
               <h2>Loops and Modes</h2>
               <ul>
-                <li>"Saved to liked" toast notification appears on click and disappears when the X icon is pressed</li>
-                <li>Menu appears on click and disappears when the X icon is pressed</li>
+                <li>"Saved to liked" toast notification animates in on click and animates out when the X icon is pressed</li>
+                <li>Menu fades in on click and fades out when the X icon is pressed</li>
               </ul>
             </div>
           </div>
@@ -251,10 +265,7 @@
         </div>
     </div>
 
-    <div id="test">
-        <img
-            src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wired.com%2Fstory%2Fstay-in-the-moment-take-a-picture%2F&psig=AOvVaw2PaaEMzW0whCEy1m04e-lY&ust=1667345382638000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLjMrNvPi_sCFQAAAAAdAAAAABAE">
-    </div>
+  
 
     <script src="script.js"></script>
 </body>

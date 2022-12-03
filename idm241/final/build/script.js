@@ -56,15 +56,16 @@ function launch_toast() {
     var x = document.getElementById("toast")
     x.className = "show";
     console.log("working");
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 40000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 62000);
 }
 
 function close_toast() {
-    document.getElementById("toast").style.display = "none";
+    document.getElementById("toast").className = "fade-out";
+    console.log(b.className);
 }
 
 function close_removetoast() {
-    document.getElementById("removetoast").style.display = "none";
+    document.getElementById("removetoast").className = "fade-out";
 }
 
 function remove_toast() {
@@ -75,16 +76,16 @@ function remove_toast() {
 }
 
 function show_modal() {
-    var y = document.getElementById("test")
-    // y.className = "show";
-    document.getElementById("overlay").style.display = "block";
-    // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+    document.getElementById("overlay").className = "fade-in";
+
+    // document.getElementById("overlay").style.display = "block";
+    // // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 
 function close_modal() {
     // var y = document.getElementById("test")
     // y.className = "show";
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById("overlay").className = "fade-out";
    
     // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
@@ -100,6 +101,7 @@ function buttonPress(){
         remove_toast();
     }
 }
+
 
 // var x = false;
 
@@ -117,3 +119,26 @@ function buttonPress(){
 //         state = false;
 //         return;
 //     }
+
+
+cancelX.addEventListener ('click', () => {
+    pinned.classList.add ('exitAnim');
+    pinnedContent.classList.add ('exitAnim-content');
+    
+    setTimeout(() => {
+      pinned.style.display="none";
+      pinned.classList.remove ('exitAnim');
+      pinnedContent.classList.remove ('exitAnim-content');
+  
+  }, 500);
+  
+  })
+  
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
