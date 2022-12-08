@@ -1,130 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allrecipes Microinteraction Redesign</title>
-    <link rel= "stylesheet" href="csstyle.css"/>
-    <link rel= "normalize" href="normalize.css"/>
-    <link rel="icon" href="pictures/purpleflower.svg">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
 
-  <body>
-    <nav id="nav" class="nav">
-      <img src="pictures/menu.png" class="nav__icon" onclick="menuClick()">
-        <a href="index.html" class="logo">
-          <svg xmlns="http://www.w3.org/2000/svg" class="color--pink" viewBox="0 0 100.29 103.47"><defs></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M88,6.5c-.1,1.12-.22,2.24-.31,3.36-.25,3.48.82,6.65,2.14,9.81a50.81,50.81,0,0,1,2.77,8c.83,3.57-.44,6.71-2.87,9.41-6.59,7.33-14.55,12.2-24.39,13.79-2.22.36-4.39,1-6.58,1.54-1.57.38-2.18.08-3-1.35a5.43,5.43,0,0,0-1.36-1.64,3,3,0,0,1-1.19-3.15c.34-2.12.84-4.23,1.06-6.36.42-3.9.7-7.82,1-11.73a21.09,21.09,0,0,1,2-8A14,14,0,0,1,61.5,15,113,113,0,0,1,82.19,3.18a10.15,10.15,0,0,1,3.38-.65c1.53-.08,2.19.61,2.3,2.12,0,.61,0,1.23,0,1.84Z"/><path class="cls-1" d="M71.27,51.35c9.77-.13,17.12,4.38,22.87,11.92A38.24,38.24,0,0,1,99.6,73c1.58,4.21.49,6.08-3.84,7.1C90.61,81.27,85.52,82.69,80.4,84c-1.36.34-2.75.52-4.12.79a8.76,8.76,0,0,1-7.27-2,23.46,23.46,0,0,1-8-11.89,75.91,75.91,0,0,1-1.8-7.76c-.41-2-1-3.81-3-4.88A1.6,1.6,0,0,1,55.94,56,6.24,6.24,0,0,1,58.23,54,33.37,33.37,0,0,1,71.27,51.35Z"/><path class="cls-1" d="M58.2,77.14c0,5.71-.78,10.54-4,14.62a21.8,21.8,0,0,1-3.53,3.39c-2.23,1.8-4.58,3.46-6.83,5.23a13.78,13.78,0,0,0-2,2.06c-.85,1-1.83,1.38-3,.63a10.86,10.86,0,0,1-2.79-2.52c-3.84-5.29-7.1-10.82-7.88-17.53C27.7,78.14,28.19,73.6,31,69.4c2.54-3.8,5.19-7.47,8.82-10.31a26.82,26.82,0,0,1,3.23-1.94,1.49,1.49,0,0,1,1.71.15,19.78,19.78,0,0,0,2.56,1.51,4.58,4.58,0,0,0,3.85.09,7.71,7.71,0,0,1,2.95-.37c.37,0,.93.65,1,1.08.93,4.27,1.84,8.54,2.63,12.83A41.26,41.26,0,0,1,58.2,77.14Z"/><path class="cls-1" d="M45.2,49.65c-1.71,1.37-1.4,3.23-1.46,5.09a14,14,0,0,1-1.81.17,11.6,11.6,0,0,0-5.74,1.66c-2.63,1.38-5.29,2.7-7.88,4.14a14.74,14.74,0,0,1-11.72,1A68.45,68.45,0,0,1,9.33,59C7.1,58.06,5,56.94,2.72,56c-3-1.26-3.3-2-2-5a21.42,21.42,0,0,1,5.49-7.2c4.28-3.91,9.06-6.9,14.86-8a13.54,13.54,0,0,1,8,.74A34.44,34.44,0,0,1,44.42,48.49C44.68,48.85,44.91,49.22,45.2,49.65Z"/><path class="cls-1" d="M53.47,31a75.37,75.37,0,0,1-1.71,13.75c-.1.4-.23.79-.36,1.17-.72,2.06-1.49,2.64-3.65,2.49a2,2,0,0,1-1.38-1c-1.36-3.35-3.92-5.58-6.66-7.75A27,27,0,0,1,29.22,20.1,41.32,41.32,0,0,1,31.09,4.84C31.72,2.7,32.8.91,35.19.25a3.91,3.91,0,0,1,3.44.3,19.68,19.68,0,0,1,3,2.41C47,8.29,51,14.42,52.39,21.94,53,24.91,53.12,28,53.47,31Z"/><path class="cls-1" d="M50,49.27c.24,0,.47,0,.71.08,2.51.41,4.25,2.22,4.06,4.22a4.53,4.53,0,0,1-5,3.73,6.84,6.84,0,0,1-2.62-.73,3.56,3.56,0,0,1-.34-6.27,16.26,16.26,0,0,1,3.07-1.23Z"/></g></g></svg>
-          liannawang
-         </a>
-       <div class="nav-right">
-           <a href="https://www.liannawang.com" class="color--pink active">portfolio</a>
-           <a href="https://www.liannawang.com/about.html">about</a>
-           <a href="resume.pdf" target="_blank">resume</a>
-      </div>
-     </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allrecipes Microinteraction Redesign</title>
+  <link rel="stylesheet" href="csstyle.css" />
+  <link rel="normalize" href="normalize.css" />
+  <link rel="icon" href="pictures/purpleflower.svg">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-<div class="text__wrapper">
- <!--class "text" lets all article text have padding for convenience-->
- <h1 class="innerpage__subheading">Allrecipes Microinteraction Redesign</h1>
- <main class="innerpage">
-  <img src="pictures/hero.png" class="innerpage__heroimage" alt="Admin Prototype">
+<body>
+  <nav id="nav" class="nav">
+    <img src="pictures/menu.png" class="nav__icon" onclick="menuClick()">
+    <a href="index.html" class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" class="color--pink" viewBox="0 0 100.29 103.47">
+        <defs></defs>
+        <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_1-2" data-name="Layer 1">
+            <path class="cls-1"
+              d="M88,6.5c-.1,1.12-.22,2.24-.31,3.36-.25,3.48.82,6.65,2.14,9.81a50.81,50.81,0,0,1,2.77,8c.83,3.57-.44,6.71-2.87,9.41-6.59,7.33-14.55,12.2-24.39,13.79-2.22.36-4.39,1-6.58,1.54-1.57.38-2.18.08-3-1.35a5.43,5.43,0,0,0-1.36-1.64,3,3,0,0,1-1.19-3.15c.34-2.12.84-4.23,1.06-6.36.42-3.9.7-7.82,1-11.73a21.09,21.09,0,0,1,2-8A14,14,0,0,1,61.5,15,113,113,0,0,1,82.19,3.18a10.15,10.15,0,0,1,3.38-.65c1.53-.08,2.19.61,2.3,2.12,0,.61,0,1.23,0,1.84Z" />
+            <path class="cls-1"
+              d="M71.27,51.35c9.77-.13,17.12,4.38,22.87,11.92A38.24,38.24,0,0,1,99.6,73c1.58,4.21.49,6.08-3.84,7.1C90.61,81.27,85.52,82.69,80.4,84c-1.36.34-2.75.52-4.12.79a8.76,8.76,0,0,1-7.27-2,23.46,23.46,0,0,1-8-11.89,75.91,75.91,0,0,1-1.8-7.76c-.41-2-1-3.81-3-4.88A1.6,1.6,0,0,1,55.94,56,6.24,6.24,0,0,1,58.23,54,33.37,33.37,0,0,1,71.27,51.35Z" />
+            <path class="cls-1"
+              d="M58.2,77.14c0,5.71-.78,10.54-4,14.62a21.8,21.8,0,0,1-3.53,3.39c-2.23,1.8-4.58,3.46-6.83,5.23a13.78,13.78,0,0,0-2,2.06c-.85,1-1.83,1.38-3,.63a10.86,10.86,0,0,1-2.79-2.52c-3.84-5.29-7.1-10.82-7.88-17.53C27.7,78.14,28.19,73.6,31,69.4c2.54-3.8,5.19-7.47,8.82-10.31a26.82,26.82,0,0,1,3.23-1.94,1.49,1.49,0,0,1,1.71.15,19.78,19.78,0,0,0,2.56,1.51,4.58,4.58,0,0,0,3.85.09,7.71,7.71,0,0,1,2.95-.37c.37,0,.93.65,1,1.08.93,4.27,1.84,8.54,2.63,12.83A41.26,41.26,0,0,1,58.2,77.14Z" />
+            <path class="cls-1"
+              d="M45.2,49.65c-1.71,1.37-1.4,3.23-1.46,5.09a14,14,0,0,1-1.81.17,11.6,11.6,0,0,0-5.74,1.66c-2.63,1.38-5.29,2.7-7.88,4.14a14.74,14.74,0,0,1-11.72,1A68.45,68.45,0,0,1,9.33,59C7.1,58.06,5,56.94,2.72,56c-3-1.26-3.3-2-2-5a21.42,21.42,0,0,1,5.49-7.2c4.28-3.91,9.06-6.9,14.86-8a13.54,13.54,0,0,1,8,.74A34.44,34.44,0,0,1,44.42,48.49C44.68,48.85,44.91,49.22,45.2,49.65Z" />
+            <path class="cls-1"
+              d="M53.47,31a75.37,75.37,0,0,1-1.71,13.75c-.1.4-.23.79-.36,1.17-.72,2.06-1.49,2.64-3.65,2.49a2,2,0,0,1-1.38-1c-1.36-3.35-3.92-5.58-6.66-7.75A27,27,0,0,1,29.22,20.1,41.32,41.32,0,0,1,31.09,4.84C31.72,2.7,32.8.91,35.19.25a3.91,3.91,0,0,1,3.44.3,19.68,19.68,0,0,1,3,2.41C47,8.29,51,14.42,52.39,21.94,53,24.91,53.12,28,53.47,31Z" />
+            <path class="cls-1"
+              d="M50,49.27c.24,0,.47,0,.71.08,2.51.41,4.25,2.22,4.06,4.22a4.53,4.53,0,0,1-5,3.73,6.84,6.84,0,0,1-2.62-.73,3.56,3.56,0,0,1-.34-6.27,16.26,16.26,0,0,1,3.07-1.23Z" />
+          </g>
+        </g>
+      </svg>
+      liannawang
+    </a>
+    <div class="nav-right">
+      <a href="https://www.liannawang.com" class="color--pink active">portfolio</a>
+      <a href="https://www.liannawang.com/about.html">about</a>
+      <a href="resume.pdf" target="_blank">resume</a>
+    </div>
+  </nav>
+
+  <div class="text__wrapper">
+    <!--class "text" lets all article text have padding for convenience-->
+    <h1 class="innerpage__subheading">Allrecipes Microinteraction Redesign</h1>
+    <main class="innerpage">
+      <img src="pictures/hero.png" class="innerpage__heroimage" alt="Admin Prototype">
+
       
-  <h3 class="innerpage__subheading">Overview</h3>
-  <p class="innerpage__text">
-    As the UI/UX designer, I used Figma to redesign Perpay's admin across a five week period. </p>
 
-  <h3 class="innerpage__subheading">Background</h3>
-  <p class="innerpage__text">
-    Micro-interactions are small, subtle animations that provide the user visual feedback that they have either successfully or unsuccessfully made a change. Micro interactions play a huge role in a user’s experience because they alleviate their cognitive load and add fun personality to the user experience, making the product more memorable and enjoyable to use.</p>
-  <p class="innerpage__text">
-    Within a ten week period, I used HTML, CSS, and Javascript to transform Allrecipes’s favorite recipe microinteraction into one that is delightful and easy to use.</p>
-    
-  <h3 class="innerpage__subheading">Problem</h3>
-  <p class="innerpage__challenge">Allrecipes needs an "Add to Favorites" microinteraction that provides <span class="bold pinkhighlight">clear, intuitive, and meaningful</span> feedback.</p>
+      <h3 class="innerpage__subheading">Overview</h3>
+      <p class="innerpage__text">
+        In my microinteractions class, I had 10 weeks to redesign Allrecipes "Add to Favorites" microinteraction to include clear, intuitive, and meaningful feedback. Prior to the redesign, Allrecipe's microinteraction didn't have a hover state, included a full screen modal for a confirmation status, and had poor ease of access. To solve these problems, I created a subtle, seamless hover state, a temporary toast notification that doesn't interupt the user's workflow, and a button on the toast notification that allows the user to add a favorite to a collection. </p>
+        <p><a href="https://www.liannawang.com/idm241/final/build">Link to the final build</a></p>
 
-  <div class="text__wrapper">
-    <div class="picturerow">
-        <div class="picturecolumn">
-          <p class>  ↆ Allrecipe's current microinteraction</p>
+      <h3 class="innerpage__subheading">Background</h3>
+      <p class="innerpage__text">
+        Micro-interactions are small, subtle animations that provide the user visual feedback that they have either
+        successfully or unsuccessfully made a change. Micro interactions play a huge role in a user’s experience because
+        they alleviate their cognitive load and add fun personality to the user experience, making the product more
+        memorable and enjoyable to use.</p>
+      <p class="innerpage__text">
+        Within a ten week period, I used HTML, CSS, and Javascript to transform Allrecipes’s favorite recipe
+        microinteraction into one that is delightful and easy to use.</p>
+
+      <h3 class="innerpage__subheading">Problem</h3>
+      <p class="innerpage__challenge">Allrecipes needs an "Add to Favorites" microinteraction that provides <span
+          class="bold pinkhighlight">clear, intuitive, and meaningful</span> feedback.</p>
+
+      <div class="text__wrapper">
+        <div class="picturerow">
+          <div class="picturecolumn">
+            <p class> ↆ Allrecipe's current microinteraction</p>
             <img src="pictures/combined.gif" class="aboutpicture">
-      </div>
-    <div class="picturecolumn">
-      <ul>
-        <li><span class="bold pinkunderline">No hover state on buttons:</span> A hover state for a button is essential because it's a clear indication  that the button is clickable. The buttons have cursor changes, but no other visual feedback.</li>
-        <li><span class="bold pinkunderline">Full screen modal:</span> Full screen modals disrupt the user's workflow and force the attention to the modal. They should only be used if you want the user to undertake an action.</li>
-        <li><span class="bold pinkunderline">Poor ease of access:</span> After saving a recipe, if the user wants to move said recipe to a collection, they have to go through two extra loading screens: one for the saved items and one for the collections page.</li>
-      </ul>
-    </div>
-  </div>
-  
-  <h3 class="innerpage__subheading">Objectives</h3>
+          </div>
+          <div class="picturecolumn">
+            <ul>
+              <li><span class="bold pinkunderline">No hover state on buttons:</span> A hover state for a button is
+                essential because it's a clear indication that the button is clickable. The buttons have cursor changes,
+                but no other visual feedback.</li>
+              <li><span class="bold pinkunderline">Full screen modal:</span> Full screen modals disrupt the user's
+                workflow and force the attention to the modal. They should only be used if you want the user to
+                undertake an action.</li>
+              <li><span class="bold pinkunderline">Poor ease of access:</span> After saving a recipe, if the user wants
+                to move said recipe to a collection, they have to go through two extra loading screens: one for the
+                saved items and one for the collections page.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="innerpage__subheading">Objectives</h3>
 
 
-      <ul>
-        <li><span class="bold pinkunderline">Include 5 triggers:</span> Design a complex and meaningful microinteraction with at least 5 triggers</li>
-        <li><span class="bold pinkunderline">Provide Feedback:</span> Provide immediate and clear feedback to the users  </li>
-        <li><span class="bold pinkunderline">Meaningful Animations:</span> Create animations on every trigger- there shouldn't be anything that just appears</li>
-      </ul>
-    
-  
-  <h3 class="innerpage__subheading">Phase 1: Alpha</h3>
-  <img src="pictures/alpha big.gif" class="innerpage__image ">
-  
-  <p class="innerpage__text">This project spanned across a five week period using the agile framework. The team consisted of two Operations members, two engineers, one product manager, and me as the UI/UX designer.</p>
-  
-  <h3 class="innerpage__subheading">Phase 2: Beta</h3>
-  <img src="pictures/admin/process.png" class="innerpage__image ">
-  <p class="innerpage__text">This project spanned across a five week period using the agile framework. The team consisted of two Operations members, two engineers, one product manager, and me as the UI/UX designer.</p>
-  
-  <h3 class="innerpage__subheading">Phase 3: Final</h3>
-  <img src="pictures/admin/process.png" class="innerpage__image ">
-  <p class="innerpage__text">This project spanned across a five week period using the agile framework. The team consisted of two Operations members, two engineers, one product manager, and me as the UI/UX designer.</p>
-  
-  
-  <h3 class="innerpage__subheading">Solution</h3>
-  <p class="innerpage__text">The product manager and I conducted a series of user interviews, testing, and surveys with the Operations members to better understand their main pain points.</p>
-  <div class="text__wrapper">
-    <div class="picturerow">
-        <div class="picturecolumn">
-          <p class>  ↆ Existing Admin Design</p>
-            <img src="pictures/admin/Old admin 1.png" class="aboutpicture">
-      </div>
-    <div class="picturecolumn">
-      <h3 class="innerpage__subheading">Here's what we found out:</h3>
-      <ul>
-        <li><span class="bold pinkunderline">Excessive page length:</span> Our users' number one pain point was the length of the page. Because their work relies on finding information at a glance, the unintuitive layout of the existing page adds on time to the users' tasks</li>
-        <li><span class="bold pinkunderline">Slow page load:</span> Because every customer support data point was loaded on the existing Admin page, the page took up to 2-3 minutes to load. With hundreds of customers to help each day, these minutes add up and make the users' work inefficient.</li>
-      </ul>
-    </div>
-  </div>
+        <ul>
+          <li><span class="bold pinkunderline">Include 5 triggers:</span> Design a complex and meaningful
+            microinteraction with at least 5 triggers</li>
+          <li><span class="bold pinkunderline">Provide Feedback:</span> Provide immediate and clear feedback to the
+            users </li>
+          <li><span class="bold pinkunderline">Meaningful Animations:</span> Create animations on every trigger- there
+            shouldn't be anything that just appears</li>
+        </ul>
 
-  <!-- <h3 class="innerpage__subheading">Ideation + Competitor Analysis</h3>
+        <h3 class="innerpage__subheading">Process</h3>
+        <p class="innerpage__text">After defining the background, challenge, and objectives for success, I was able to proceed with the design process of the microinteraction. I designed Allrecipe's new favorite microinteraction in three phases: Alpha, Beta, and Final. </p>
+        <p class="innerpage__text"> Designing in three phases allowed me to iterate, get feedback, and build upon my last version. This ensured that there weren't any major problems by the time I coded and refined the final, making the process more efficient and thorough.</p>
+       
+        <h3 class="innerpage__subheading">Phase 1: Alpha Build</h3>
+        <p class="innerpage__text">My first task in redesigning the microinteraction was adding a hover state to the favorite icon. As mentioned in the problem section of this case study, the existing favorite icon did not include a hover state, which made it unclear if it was clickable or not.</p>
+        <img src="pictures/alpha big.gif" class="innerpage__image ">
+
+        
+        <p class="innerpage__text">Before designing the interaction, I researched UX best practices for hover states and found that hover states should be a subtle difference that are usually a shade darker than the default state. Applying this guideline, I created a hover state that made the color 10% darker and 10% bigger in size. These subtle tweaks are enough to indicate a change in the interface, but not too overbearing and in your face.</p>
+        <p class="innerpage__text">I also redesigned the click trigger during this phase. While the original microinteraction just had an instant fill change, I enhanced the animation and made it more enjoyable by adding a smooth scale up and scale down effect.</p>
+        <h3 class="innerpage__subheading">Phase 2: Beta Build</h3>
+        <p class="innerpage__text"> In the next build, I focused on designing and coding the toast notification that would animate in when the favorite button is clicked.</p>
+        <img src="pictures/beta.gif" class="innerpage__image ">
+        <p class="innerpage__text"> For the beta build, when the favorite icon is clicked to save an item, a check mark comes up from the bottom of the screen and expands to show the text: "Saved from liked". This notification dissapears on its own after 5 seconds. The saved toast notification has a button that allows the user to view a modal that lists their collections. The same thing occurs when the user removed the like, expect the text reads "removed", there is an X icon in the place of the checkmark and there isn't a button.</p>
+        <p class="innerpage__text"> <span class="bold pinkunderline">Feedback:</span> In my review session of the beta build, I received a couple pieces of feedback.</p>
+        <p class="innerpage__text"> 1. Because the "saved to liked" toast notificaiton has an interactive element, my users told me that the notification went away too fast. To solve this, I slowed down the animation and made the saved to liked toast notification go away on its own after 60 seconds. This way, the user has ample time to interact with the notificaiton without being forced to manually close it.</p>
+        <p class="innerpage__text"> 2. My user was confused about the iconography on the notification. They thought that the X icon was actually an X icon to close the notificaiton, when in fact, it was merely for decoration/to provide a visual signal of whether the user favorited or unfavorited a recipe.</p>
+
+        <h3 class="innerpage__subheading">Phase 3/The Solution: Final Build</h3>
+        <img src="pictures/final.gif" class="innerpage__image ">
+        <p class="innerpage__text">I took all the pain points from the beta build's feedback and implemented it into the final. One of the subtle changes I made were adding hover effects to all buttons - not just the favorite icon.</p>
+        <p class="innerpage__text">As stated in the section above, another change that I made is the amount of time the "saved to like". The time went from staying for 5 seconds to 60 seconds so that users could process and select whichever flow they desire to. </p>
+        <p> In addition, I added a X icon to both toast notifications so that users could close out of it any time.</p>
+        <p class="innerpage__text">Lastly, I changed the check and X icon to a heart and broken heart to enhance clarity. </p>
+
+
+       
+
+          <!-- <h3 class="innerpage__subheading">Ideation + Competitor Analysis</h3>
   <img src="pictures/admin/process.png" class="innerpage__image ">
   <p class="innerpage__text">This project spanned across a five week period using the agile framework. The team consisted of two Operations members, two engineers, one product manager, and me as the UI/UX designer.</p>
    -->
 
 
-  
-  <h3 class="innerpage__subheading">Conclusion & Results</h3>
-  <p class="innerpage__text">After the redesign was presented to the relevant stakeholders (engineers, product team, rest of the Operations team, and the CPO), we made a few changes but ultimately got the go ahead to build the redesign. </p>
-  <p class="innerpage__text">We timed the length of time the user needed to complete a task flow with the old and new design and we found out that
-    <span class="bold pinkhighlight">the time taken to complete key tasks was decreased by 20% </class></p>
-     
-  <!--figure out how to make this responsive-->
-  <!-- <iframe width="320" height="570" src="https://www.youtube.com/embed/A9qYPifi07k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-</main>
-</div>
-   
-    
 
-<footer>
-  <h2 class="footer_header">🤙🏼  let’s get in touch!</h2>
-  <a href="https://www.linkedin.com/in/lianna-wang-20b5b3206"><img src="pictures/linkedin.png" class= "footer__icon" alt="linkedin-icon"></a>
-  <a href = "mailto: lmw364@drexel.edu"><img src="pictures/mail icon purp.png" class= "footer__icon" alt="mail-icon"></a>
-</footer>
-    <script src="script.js"></script>
-  </body>
+          <h3 class="innerpage__subheading">Conclusion & Results</h3>
+          <p class="innerpage__text">In conclusion, I succesfully met my goals by creating 5 new triggers in my microinteraction that convey meaningful and immediate feedback.</p>
+          <p class="innerpage__text">I really enjoyed the process of splitting the project builds into 3 phases. Throughout the project, I learned how to build incrementally and get feedback, rinsing, and repeating. This set me up to delve deeper into using agile framework, which is a very popular design framework.</p>
+          <p class="innerpage__text">
+            In the beginning I struggled a bit with combining HTML, CSS, and Javascript, but at the end of the day, I'm extemely grateful for the intersectionality of this project because I got to enhance all three of my skills.
+          </p>
+
+          <!--figure out how to make this responsive-->
+          <!-- <iframe width="320" height="570" src="https://www.youtube.com/embed/A9qYPifi07k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    </main>
+  </div>
+
+
+
+  <footer>
+    <h2 class="footer_header">🤙🏼 let’s get in touch!</h2>
+    <a href="https://www.linkedin.com/in/lianna-wang-20b5b3206"><img src="pictures/linkedin.png" class="footer__icon"
+        alt="linkedin-icon"></a>
+    <a href="mailto: lmw364@drexel.edu"><img src="pictures/mail icon purp.png" class="footer__icon" alt="mail-icon"></a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
